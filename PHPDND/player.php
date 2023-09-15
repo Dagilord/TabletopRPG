@@ -1,18 +1,11 @@
 <?php
-
-class Player
+require_once('creature.php');
+class Player extends Creature
 {
 	// A class what repersents a player object
-	private $name;
-	private $stats = ["STR" => 10, "CON" => 10, "DEX" => 10, "INT" => 10, "CHA" => 10, "WIS" => 10,];
-	private $lvl;
 	private $cls;
-	private $race;
 	private $equipment = [];
 	private $invenrtory = [];
-	private $currXP = 0;
-	private $gold = 0;
-	private const STATLBLS = ["Name", "Class", "Race", "Level", "XP", "Money"];
 
 	function __construct(string $n = "Kopcos", array $stt = [], int $lvl = 0, array $equ = [], string $cls = "Warlock", string $race = "Male Gnome", int $gold = 150000)
 	{
@@ -20,6 +13,7 @@ class Player
 		$this->cls = $cls;
 		$this->race = $race;
 		$this->gold = $gold;
+		$this->maxHp = 10;
 	}
 
 
@@ -60,6 +54,8 @@ class Player
 		$rawraces = explode(PHP_EOL, file_get_contents("./DATA/races.txt"));
 		$rndrace = $rawraces[rand(0, sizeof($rawraces) - 1)];
 		$this->race = $rndgnd[array_rand($rndgnd, 1)] . " " . $rndrace;
+
+		$this->calcMaxHp();
 	}
 
 
@@ -88,5 +84,41 @@ class Player
 		}
 		$myStats .= "+" . str_repeat("=", 40) . "+\n";
 		echo $myStats;
+	}
+
+
+
+	protected function calcMaxHp()
+	{
+
+		// switch ($this->stats["CON"]) {
+		// 	case $this:
+		// 		# code...
+		// 		break;
+
+		// 	default:
+		// 		# code...
+		// 		break;
+		// }
+
+
+		$cons = $this->stats["CON"];
+		$hpmod = -5;
+
+		if ($cons != 1) {
+			for ($ix1 = 2; $ix1 <= $cons; $ix1++) {
+				if ($ix1 % 2 === 0) {
+					$hpmod++;
+					echo "cons: " . $cons . " ix1: " . $ix1 . " hpmod: " . $hpmod . "\n";
+				}
+			}
+		}
+
+
+
+
+
+
+		$this->maxHp += $hpmod;
 	}
 }
