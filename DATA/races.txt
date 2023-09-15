@@ -1,0 +1,5 @@
+gnome
+elf
+dwarf
+half-orc
+human

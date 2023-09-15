@@ -1,0 +1,6 @@
+wizard
+paladin
+fighter
+ranger
+warlock
+cleric
