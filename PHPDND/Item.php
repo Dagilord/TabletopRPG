@@ -23,7 +23,7 @@ class Item
   {
     //<SF>
     // CREATED ON: 2023-09-19 <br>
-    // CREATED BY: USERNAME$<br>
+    // CREATED BY: AX07057<br>
     // Just generate a random unique ID to the item, by 5 random 4 digits hex value
     // PARAMETERS:
     //×-
@@ -45,8 +45,8 @@ class Item
   {
     //<SF>
     // CREATED ON: 2023-09-19 <br>
-    // CREATED BY: USERNAME$<br>
-    // Convere item to string.<br>
+    // CREATED BY: AX07057<br>
+    // Convert item to string.<br>
     // PARAMETERS:
     //×-
     // @-- @param = ... -@
