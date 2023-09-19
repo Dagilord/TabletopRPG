@@ -1,0 +1,13 @@
+sword
+two-handed sword
+mace
+two-handed hammer
+axe
+two-handed axe
+quarterstaff
+knife
+shortbow
+longbow
+dagger
+club
+sling

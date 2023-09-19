@@ -1,0 +1,10 @@
+iron
+steel
+wood
+copper
+silver
+gold
+platinum
+adamantium
+mithril
+titanium

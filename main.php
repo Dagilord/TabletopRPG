@@ -1,7 +1,8 @@
 <?php
 require_once("consts.php");
 require_once("PHPDND/player.php");
-$menu = [1 => "draw a square \n", 2 => "play 21 cards \n", 3 => "generate a random player \n"];
+require_once("PHPDND/Weapon.php");
+$menu = [1 => "draw a square \n", 2 => "play 21 cards \n", 3 => "generate a random player \n", 4 => "generate a random weapon \n"];
 $header = "please choose from the following options(enter 'q' to quit)\n" . str_repeat("=", 40) . "\n";
 foreach ($menu as $key => $value) {
     $header .= $key . ") " . $value;
@@ -21,6 +22,8 @@ while (true) {
         play21();
     } elseif ($input === '3') {
         genRndmPlyr();
+    } elseif ($input === '4') {
+        genRndmWpn();
     } else {
         echo FONT_BLUE . BGRND_CYAN . "invalid input: {$input}" . FULL_RESET . "\n";
         echo $header;
@@ -133,6 +136,14 @@ function genRndmPlyr()
     $plyr = new Player();
     $plyr->randomizeHero();
     $plyr->showStats();
+}
+
+
+function genRndmWpn()
+{
+    $wpn = new Weapon();
+    $wpn->randomizeMe();
+    $wpn->showMyDescription();
 }
 
 

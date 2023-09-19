@@ -1,0 +1,11 @@
+flaming
+blazing
+icy
+venomous
+heavy
+light
+holy
+unholy
+electric
+booming
+healing
