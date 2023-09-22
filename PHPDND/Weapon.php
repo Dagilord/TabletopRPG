@@ -78,6 +78,7 @@ class Weapon extends Item
 
   public function randomizeMe()
   {
+    $wpnName = '';
     $rawMats = explode(PHP_EOL, file_get_contents("./DATA/materials.txt"));
     $rndMat = $rawMats[rand(0, sizeof($rawMats) - 1)];
     $this->preFix2 = $rndMat;
@@ -87,7 +88,29 @@ class Weapon extends Item
     $rawWpnDmg = explode(PHP_EOL, file_get_contents("./DATA/weapon_damage.txt"));
     $rndWpnDmg = $rawWpnDmg[array_search($rndWpn, $rawWpns)];
     $this->maxDmg = $rndWpnDmg;
-    echo "Here comes an item randomization function \n";
+    if ($this->preFix1 !== '') {
+      $wpnName .= $this->preFix1 . ' ';
+    }
+    if ($this->preFix2 !== '') {
+      $wpnName .= $this->preFix2 . ' ';
+    }
+    if ($this->weaponType !== '') {
+      $wpnName .= $this->weaponType;
+    }
+    $this->name = $wpnName;
+  }
+
+  public function getDamageStats(): array
+  {
+    return ["minDmg" => $this->minDmg, "maxDmg" => $this->maxDmg];
+  }
+  public function getRndDmg(): int
+  {
+    return random_int($this->minDmg, $this->maxDmg);
+  }
+  public function getStat(string $stat)
+  {
+    return $this->$stat;
   }
 }
 

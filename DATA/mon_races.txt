@@ -1,0 +1,20 @@
+wolf
+bear
+goblin
+zombie
+ork
+shade
+giant rat
+beholder
+vampire
+minotaur
+ogre
+troll
+bugbear
+kobold
+yeti
+fire elemental
+ice elemental
+air elemental
+earth elemental
+lightning elemental
