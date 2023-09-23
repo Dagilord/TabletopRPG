@@ -161,3 +161,4 @@ function genRndmArm()
 // monster + player szükséges adatok
 // konkrét harc menete
 // futás, skillek, itemek, mozgás, classok
+//test
